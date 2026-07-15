@@ -16,7 +16,8 @@ x2 = 300
 y2 = 300
 
 sprite1 = transform.scale(image.load('C:/Users/Spark/Desktop/Algorithmics/Python 2/M5/M5L1/Tablero/Fondos/zombie1.png'), (100, 100))
-#sprite2 = transform.scale(image.load('C:/Users/Spark/Desktop/Algorithmics/Python 2/M5/M5L1/Tablero/Fondos/crazydave.png'), (100, 100))
+sprite2 = transform.scale(image.load('C:/Users/Spark/Desktop/Algorithmics/Python 2/M5/M5L1/Tablero/Fondos/crazydave.png'), (100, 100))
+sprite3 = transform.scale(image.load('C:/Users/Spark/Desktop/Algorithmics/Python 2/M5/M5L1/Tablero/Fondos/zombie2.png'), (100, 100))
 
 game = True #Variable para controlar el ciclo del juego
 clock = time.Clock() 
@@ -26,8 +27,10 @@ speed = 5 #Velocidad de movimiento de los jugadores
 while game:
     window.blit(background,(0, 0))
     window.blit(sprite1, (x1, y1))
- #   window.blit(sprite2, (x2, y2))
-    
+    window.blit(sprite2, (x2, y2))
+    window.blit(sprite3, (x3, y3))
+
+
     for e in event.get():
         if e.type == QUIT:
             game = False
@@ -43,7 +46,15 @@ while game:
     if keys[K_DOWN] and y1 < 695:   
         y1 += speed
 
-        
+    if keys[K_a] and x2 > 5: 
+        x2 -= speed
+    if keys[K_d] and x2 < 695:
+        x2 += speed
+    if keys[K_w] and y2 > 5:
+        y2 -= speed
+    if keys[K_s] and y2 < 695:    
+        y2 += speed    
+    
     display.update()
     clock.tick(FPS)
 
