@@ -43,7 +43,15 @@ while game:
     if keys[K_DOWN] and y1 < 695:   
         y1 += speed
 
-        
+    if keys[K_a] and x1 > 5: 
+        x1 -= speed
+    if keys[K_d] and x1 < 695:  
+        x1 += speed
+    if keys[K_w] and y1 > 5:
+        y1 -= speed
+    if keys[K_s] and y1 < 695:   
+        y1 += speed
+
     display.update()
     clock.tick(FPS)
 
